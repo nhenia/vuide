@@ -2,6 +2,10 @@
 import React, { useState, useEffect } from 'react';
 import { Home, Save } from 'lucide-react';
 
+/**
+ * Settings view for the application.
+ * Allows users to set their "sanctuary" (hotel) address.
+ */
 export const SettingsAltar: React.FC = () => {
   const [hotelAddress, setHotelAddress] = useState('');
   const [isSaved, setIsSaved] = useState(false);

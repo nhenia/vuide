@@ -1,0 +1,7 @@
+{
+  "name": "Neon Occult NOLA Guide",
+  "description": "A witchy-glitchy guide to New Orleans, mapping the city's spirit through the lens of the Major Arcana.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}

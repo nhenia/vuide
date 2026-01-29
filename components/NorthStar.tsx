@@ -2,10 +2,6 @@
 import React from 'react';
 import { IsolatedStarIcon } from './CustomIcons';
 
-/**
- * A floating button that navigates the user back to their "sanctuary" (hotel address).
- * If no address is set, it prompts the user to visit the settings.
- */
 export const NorthStar: React.FC = () => {
   const handleNavigate = () => {
     const settingsStr = localStorage.getItem('neon_occult_settings');

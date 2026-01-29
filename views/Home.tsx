@@ -4,10 +4,6 @@ import { NavLink } from 'react-router-dom';
 import { ARCANA_SHORT_DESCRIPTIONS } from '../constants';
 import { TarotCardIcon } from '../components/CustomIcons';
 
-/**
- * The landing view of the application.
- * Displays featured actions and a list of Arcana categories.
- */
 export const Home: React.FC = () => {
   return (
     <div className="space-y-12 pb-8 animate-in fade-in slide-in-from-bottom-4 duration-1000">
@@ -65,7 +61,7 @@ export const Home: React.FC = () => {
               >
                 <div className="flex justify-between items-baseline w-full">
                   <span className="text-2xl font-gothic text-white group-hover:text-[var(--accent-c)] transition-colors">{key}</span>
-                  <span className="text-[10px] font-mono text-white/40 group-hover:text-[var(--accent-p)] transition-colors opacity-0 group-hover:opacity-100 uppercase tracking-wider">{"Open >>"}</span>
+                  <span className="text-[10px] font-mono text-white/40 group-hover:text-[var(--accent-p)] transition-colors opacity-0 group-hover:opacity-100 uppercase tracking-wider">Open >></span>
                 </div>
                 <p className="text-[14px] text-white/60 font-mono italic group-hover:text-white/90 transition-colors mt-1">{shortDesc}</p>
               </NavLink>

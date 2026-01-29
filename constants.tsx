@@ -1,9 +1,6 @@
 
 import { Arcana, NolaLocation } from './types';
 
-/**
- * Detailed descriptions for each Arcana, focusing on the NOLA vibe.
- */
 export const ARCANA_DESCRIPTIONS: Record<Arcana, string> = {
   [Arcana.FOOL]: "Dive Bars. 1-Star reviews, cheap drinks, and chaotic energy.",
   [Arcana.MAGICIAN]: "The Lavender Line. Queer nightlife, drag, and transformation.",
@@ -65,9 +62,6 @@ export const NHEN_PICK_NAMES = [
   "Storyville Museum"
 ];
 
-/**
- * Master list of locations categorized by Arcana.
- */
 export const LOCATIONS: NolaLocation[] = [
   // --- EXISTING LOCATIONS ---
   {

@@ -2,10 +2,6 @@
 import React, { useEffect, useState } from 'react';
 import { Moon, Sun } from 'lucide-react';
 
-/**
- * Component for toggling between dark and light themes.
- * Persists user preference in localStorage.
- */
 export const ThemeToggle: React.FC = () => {
   const [isDark, setIsDark] = useState(true);
 

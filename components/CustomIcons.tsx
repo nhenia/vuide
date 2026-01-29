@@ -1,9 +1,6 @@
 
 import React from 'react';
 
-/**
- * Pixel-art inspired Tarot Card icon.
- */
 export const TarotCardIcon = ({ size = 24, className = "" }) => (
   <svg 
     width={size} 
@@ -22,9 +19,6 @@ export const TarotCardIcon = ({ size = 24, className = "" }) => (
   </svg>
 );
 
-/**
- * Pixel-art inspired North Star icon.
- */
 export const IsolatedStarIcon = ({ size = 24, className = "" }) => (
   <svg 
     width={size} 

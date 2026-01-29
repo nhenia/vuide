@@ -8,10 +8,6 @@ import { SplashScreen } from './SplashScreen';
 
 interface LayoutProps { children: ReactNode; }
 
-/**
- * Main layout component that wraps the application content.
- * Handles the splash screen visibility and provides navigation.
- */
 export const Layout: React.FC<LayoutProps> = ({ children }) => {
   const [showSplash, setShowSplash] = useState(true);
 

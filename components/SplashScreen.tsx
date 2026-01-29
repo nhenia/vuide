@@ -2,10 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import { PixelAlligatorIcon } from './CustomIcons';
 
-/**
- * Onboarding splash screen shown to new users.
- * Collects the user's sanctuary address and introduces the app's aesthetic.
- */
 export const SplashScreen: React.FC<{ onComplete: () => void }> = ({ onComplete }) => {
   const [step, setStep] = useState<'intro' | 'onboarding'>('intro');
   const [address, setAddress] = useState('');

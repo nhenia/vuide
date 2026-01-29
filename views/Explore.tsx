@@ -5,10 +5,6 @@ import { LOCATIONS } from '../constants';
 import { Arcana } from '../types';
 import { LocationCard } from '../components/LocationCard';
 
-/**
- * View for exploring locations by Arcana.
- * Supports filtering by specific Arcana cards or viewing the full deck.
- */
 export const Explore: React.FC = () => {
   const { arcana } = useParams<{ arcana: string }>();
   const [selectedArcana, setSelectedArcana] = useState<Arcana | 'ALL'>('ALL');

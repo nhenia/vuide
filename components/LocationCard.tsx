@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { NolaLocation } from '../types';
 import { getLocationProphecy } from '../services/gemini';
-import { Eye } from 'lucide-react';
+import { Eye, Share2 } from 'lucide-react';
 import { PixelPinIcon } from './CustomIcons';
 
 interface LocationCardProps {
@@ -10,10 +10,6 @@ interface LocationCardProps {
   revealed?: boolean;
 }
 
-/**
- * Component representing a Tarot card for a NOLA location.
- * Allows users to fetch a "prophecy" (AI-generated description) and view on Google Maps.
- */
 export const LocationCard: React.FC<LocationCardProps> = ({ location, revealed = true }) => {
   const [prophecy, setProphecy] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
@@ -24,6 +20,31 @@ export const LocationCard: React.FC<LocationCardProps> = ({ location, revealed =
     const p = await getLocationProphecy(location.name, location.arcana);
     setProphecy(p);
     setLoading(false);
+  };
+
+  const handleShare = async (e: React.MouseEvent) => {
+    e.stopPropagation();
+    const shareData = {
+      title: location.name,
+      text: `🔮 Neon Occult NOLA: ${location.name} (${location.arcana})\n${location.vibe}\n${location.address}`,
+      url: window.location.href
+    };
+
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+      } catch (err) {
+        console.debug('Share cancelled or failed', err);
+      }
+    } else {
+      // Fallback: Copy to clipboard
+      try {
+        await navigator.clipboard.writeText(`${shareData.text}`);
+        alert('Prophecy details copied to clipboard.');
+      } catch (err) {
+        console.error('Clipboard failed', err);
+      }
+    }
   };
 
   return (
@@ -48,7 +69,7 @@ export const LocationCard: React.FC<LocationCardProps> = ({ location, revealed =
           <div className="flex-grow flex flex-col justify-between">
             <div>
               <h3 className="font-glitch text-3xl leading-none mb-2 text-white group-hover:text-[var(--accent-c)] transition-colors uppercase">{location.name}</h3>
-              <p className="text-[12px] font-mono text-[var(--accent-c)] mb-3 font-bold tracking-tight">{">>"} {location.vibe}</p>
+              <p className="text-[12px] font-mono text-[var(--accent-c)] mb-3 font-bold tracking-tight">>> {location.vibe}</p>
               <p className="text-[13px] text-white/80 leading-relaxed font-mono">{location.description}</p>
             </div>
 
@@ -69,17 +90,28 @@ export const LocationCard: React.FC<LocationCardProps> = ({ location, revealed =
             </div>
           </div>
           
-          {/* Google Maps Link with Pixel Pin */}
-          <button 
-            onClick={(e) => {
-                e.stopPropagation();
-                window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location.name + ' ' + location.address + ' New Orleans')}`, '_blank');
-            }}
-            className="absolute top-3 right-3 p-2 bg-black/70 backdrop-blur-md text-[var(--accent-c)] hover:text-white transition-colors border border-[var(--accent-c)]/50 hover:bg-[var(--accent-c)] z-20 rounded-none group/pin"
-            title="Open Google Maps"
-          >
-            <PixelPinIcon size={20} className="pixel-icon group-hover/pin:scale-110 transition-transform" />
-          </button>
+          {/* Action Buttons: Share & Maps */}
+          <div className="absolute top-3 right-3 flex gap-2 z-20">
+             <button 
+                onClick={handleShare}
+                className="p-2 bg-black/70 backdrop-blur-md text-[var(--accent-c)] hover:text-white transition-colors border border-[var(--accent-c)]/50 hover:bg-[var(--accent-c)] rounded-none group/share"
+                title="Share Destiny"
+            >
+                <Share2 size={20} className="pixel-icon group-hover/share:scale-110 transition-transform" />
+            </button>
+
+            <button 
+                onClick={(e) => {
+                    e.stopPropagation();
+                    window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location.name + ' ' + location.address + ' New Orleans')}`, '_blank');
+                }}
+                className="p-2 bg-black/70 backdrop-blur-md text-[var(--accent-c)] hover:text-white transition-colors border border-[var(--accent-c)]/50 hover:bg-[var(--accent-c)] rounded-none group/pin"
+                title="Open Google Maps"
+            >
+                <PixelPinIcon size={20} className="pixel-icon group-hover/pin:scale-110 transition-transform" />
+            </button>
+          </div>
+
         </div>
       </div>
     </div>

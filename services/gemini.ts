@@ -1,9 +1,20 @@
 
 import { GoogleGenAI } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY! });
+const apiKey = process.env.API_KEY || "";
+const ai = apiKey ? new GoogleGenAI({ apiKey }) : null;
 
+/**
+ * Fetches a cryptic prophecy for a specific location and arcana using Gemini AI.
+ *
+ * @param locationName - The name of the location.
+ * @param arcana - The associated Tarot card.
+ * @returns {Promise<string>} A poetic, glitchy prophecy.
+ */
 export async function getLocationProphecy(locationName: string, arcana: string): Promise<string> {
+  if (!ai) {
+    return "The spirits are silent (API Key missing).";
+  }
   try {
     const response = await ai.models.generateContent({
       model: 'gemini-3-flash-preview',

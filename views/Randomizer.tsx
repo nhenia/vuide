@@ -5,6 +5,10 @@ import { NolaLocation } from '../types';
 import { LocationCard } from '../components/LocationCard';
 import { TarotCardIcon } from '../components/CustomIcons';
 
+/**
+ * View for drawing a random spread of locations.
+ * Simulates a Tarot card reading by shuffling and dealing three cards.
+ */
 export const Randomizer: React.FC = () => {
   const [hand, setHand] = useState<NolaLocation[]>([]);
   const [isDealing, setIsDealing] = useState(false);

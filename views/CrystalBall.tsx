@@ -6,6 +6,10 @@ import { NavLink } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import { NolaLocation } from '../types';
 
+/**
+ * View for "gazing" into the future to find a specific recommended location.
+ * Uses NHEN's picks to provide a singular destination.
+ */
 export const CrystalBall: React.FC = () => {
   const [prediction, setPrediction] = useState<NolaLocation | null>(null);
   const [isGazing, setIsGazing] = useState(false);

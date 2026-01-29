@@ -1,4 +1,7 @@
 
+/**
+ * Enum representing the Major Arcana cards used in the guide.
+ */
 export enum Arcana {
   FOOL = "The Fool",
   MAGICIAN = "The Magician",
@@ -16,6 +19,9 @@ export enum Arcana {
   JUDGEMENT = "Judgement",
 }
 
+/**
+ * Interface representing a New Orleans location associated with an Arcana.
+ */
 export interface NolaLocation {
   id: string;
   name: string;

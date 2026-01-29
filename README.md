@@ -61,6 +61,12 @@ Neon Occult NOLA is built on a "witchy-glitchy" stack designed for performance, 
    npm run dev
    ```
 
+## 🚀 DEPLOYMENT
+
+This app is optimized for GitHub Pages.
+1. Ensure your repository settings have **Settings > Pages > Build and deployment > Source** set to **GitHub Actions**.
+2. The `deploy.yml` workflow will automatically handle the rest on every push to `main`.
+
 ## 🧪 TESTING & VERIFICATION
 
 Maintain the app's spectral integrity with our full suite of tests:

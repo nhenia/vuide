@@ -61,7 +61,7 @@ export const Home: React.FC = () => {
               >
                 <div className="flex justify-between items-baseline w-full">
                   <span className="text-2xl font-gothic text-white group-hover:text-[var(--accent-c)] transition-colors">{key}</span>
-                  <span className="text-[10px] font-mono text-white/40 group-hover:text-[var(--accent-p)] transition-colors opacity-0 group-hover:opacity-100 uppercase tracking-wider">Open >></span>
+                  <span className="text-[10px] font-mono text-white/40 group-hover:text-[var(--accent-p)] transition-colors opacity-0 group-hover:opacity-100 uppercase tracking-wider">Open &gt;&gt;</span>
                 </div>
                 <p className="text-[14px] text-white/60 font-mono italic group-hover:text-white/90 transition-colors mt-1">{shortDesc}</p>
               </NavLink>

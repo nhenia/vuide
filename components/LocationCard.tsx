@@ -69,7 +69,7 @@ export const LocationCard: React.FC<LocationCardProps> = ({ location, revealed =
           <div className="flex-grow flex flex-col justify-between">
             <div>
               <h3 className="font-glitch text-3xl leading-none mb-2 text-white group-hover:text-[var(--accent-c)] transition-colors uppercase">{location.name}</h3>
-              <p className="text-[12px] font-mono text-[var(--accent-c)] mb-3 font-bold tracking-tight">>> {location.vibe}</p>
+              <p className="text-[12px] font-mono text-[var(--accent-c)] mb-3 font-bold tracking-tight">&gt;&gt; {location.vibe}</p>
               <p className="text-[13px] text-white/80 leading-relaxed font-mono">{location.description}</p>
             </div>
 

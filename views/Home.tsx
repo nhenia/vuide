@@ -3,6 +3,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { ARCANA_SHORT_DESCRIPTIONS } from '../constants';
 import { TarotCardIcon } from '../components/CustomIcons';
+import { CategoryScroll } from '../components/CategoryScroll';
 
 export const Home: React.FC = () => {
   return (
@@ -48,25 +49,10 @@ export const Home: React.FC = () => {
             </NavLink>
         </div>
 
-        {/* Categories List */}
+        {/* Categories Scroll */}
         <div className="space-y-4">
           <h4 className="font-mono text-[11px] text-[var(--accent-p)] uppercase tracking-[0.3em] border-b border-white/20 pb-3 font-bold">SELECT YOUR CARD</h4>
-          
-          <div className="flex flex-col gap-2">
-            {Object.entries(ARCANA_SHORT_DESCRIPTIONS).map(([key, shortDesc]) => (
-              <NavLink 
-                key={key} 
-                to={`/category/${encodeURIComponent(key)}`}
-                className="group flex flex-col p-4 bg-[var(--card-bg)] border-l-2 border-white/20 hover:border-l-[var(--accent-c)] hover:bg-black/80 transition-all backdrop-blur-md"
-              >
-                <div className="flex justify-between items-baseline w-full">
-                  <span className="text-2xl font-gothic text-white group-hover:text-[var(--accent-c)] transition-colors">{key}</span>
-                  <span className="text-[10px] font-mono text-white/40 group-hover:text-[var(--accent-p)] transition-colors opacity-0 group-hover:opacity-100 uppercase tracking-wider">Open &gt;&gt;</span>
-                </div>
-                <p className="text-[14px] text-white/60 font-mono italic group-hover:text-white/90 transition-colors mt-1">{shortDesc}</p>
-              </NavLink>
-            ))}
-          </div>
+          <CategoryScroll />
         </div>
       </div>
     </div>

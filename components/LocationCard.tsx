@@ -2,8 +2,9 @@
 import React, { useState } from 'react';
 import { NolaLocation } from '../types';
 import { getLocationProphecy } from '../services/gemini';
-import { Eye, Share2 } from 'lucide-react';
+import { Eye, Share2, Ghost } from 'lucide-react';
 import { PixelPinIcon } from './CustomIcons';
+import { PortalOverlay } from './PortalOverlay';
 
 interface LocationCardProps {
   location: NolaLocation;
@@ -13,6 +14,7 @@ interface LocationCardProps {
 export const LocationCard: React.FC<LocationCardProps> = ({ location, revealed = true }) => {
   const [prophecy, setProphecy] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  const [showPortal, setShowPortal] = useState(false);
 
   const fetchProphecy = async () => {
     if (prophecy) return;
@@ -90,8 +92,21 @@ export const LocationCard: React.FC<LocationCardProps> = ({ location, revealed =
             </div>
           </div>
           
-          {/* Action Buttons: Share & Maps */}
+          {/* Action Buttons: Share, Maps, & Portal */}
           <div className="absolute top-3 right-3 flex gap-2 z-20">
+            {location.isSecretPortal && (
+             <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setShowPortal(true);
+                }}
+                className="p-2 bg-black/70 backdrop-blur-md text-[var(--accent-p)] hover:text-white transition-colors border border-[var(--accent-p)]/50 hover:bg-[var(--accent-p)] rounded-none group/portal animate-pulse"
+                title="Enter Secret Portal"
+            >
+                <Ghost size={20} className="pixel-icon group-hover/portal:scale-110 transition-transform" />
+            </button>
+            )}
+
              <button 
                 onClick={handleShare}
                 className="p-2 bg-black/70 backdrop-blur-md text-[var(--accent-c)] hover:text-white transition-colors border border-[var(--accent-c)]/50 hover:bg-[var(--accent-c)] rounded-none group/share"
@@ -114,6 +129,12 @@ export const LocationCard: React.FC<LocationCardProps> = ({ location, revealed =
 
         </div>
       </div>
+      {showPortal && (
+        <PortalOverlay
+          location={location}
+          onClose={() => setShowPortal(false)}
+        />
+      )}
     </div>
   );
 };

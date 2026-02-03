@@ -7,7 +7,7 @@ export async function getLocationProphecy(locationName: string, arcana: string):
   try {
     const response = await ai.models.generateContent({
       model: 'gemini-3-flash-preview',
-      contents: `You are an occult guide to New Orleans. Write a short, cryptic, poetic "spiritual reading" (2 sentences max) for a tourist visiting ${locationName}, which is associated with ${arcana} Tarot card. Use witchy, glitchy language.`,
+      contents: `You are an occult guide to New Orleans. Write a short, cryptic, poetic "spiritual reading" (2 sentences max) for a tourist visiting ${locationName}, which is associated with ${arcana} Tarot card. Use witchy, glitchy language, neon-noir metaphors, and techno-occult terminology. Ensure the tone is evocative and mysterious.`,
       config: {
         temperature: 0.9,
         topP: 0.95,

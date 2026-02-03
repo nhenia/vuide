@@ -54,7 +54,7 @@ export const NHEN_PICK_NAMES = [
 ];
 
 export const LOCATIONS: NolaLocation[] = [
-  [cite_start]// --- THE FOOL (Dive Bars) [cite: 3, 4, 6] ---
+  // --- THE FOOL (Dive Bars) [cite: 3, 4, 6] ---
   {
     id: "dive-1",
     name: "Checkpoint Charlie's",
@@ -146,7 +146,7 @@ export const LOCATIONS: NolaLocation[] = [
     image: "https://images.unsplash.com/photo-1498038432885-c6f3f1b912ee?auto=format&fit=crop&q=80&w=600"
   },
 
-  [cite_start]// --- THE DEVIL (Occult Shops) [cite: 7, 8, 33] ---
+  // --- THE DEVIL (Occult Shops) [cite: 7, 8, 33] ---
   {
     id: "shop-1",
     name: "Voodoo Authentica",
@@ -211,7 +211,7 @@ export const LOCATIONS: NolaLocation[] = [
     image: "https://images.unsplash.com/photo-1588665796985-c6579051888b?auto=format&fit=crop&q=80&w=600"
   },
 
-  [cite_start]// --- THE EMPEROR (Grand Dames) [cite: 10, 11] ---
+  // --- THE EMPEROR (Grand Dames) [cite: 10, 11] ---
   {
     id: "dame-1",
     name: "Antoine’s",
@@ -249,7 +249,7 @@ export const LOCATIONS: NolaLocation[] = [
     image: "https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?auto=format&fit=crop&q=80&w=600"
   },
 
-  [cite_start]// --- THE MAGICIAN (Queer Bars) [cite: 12, 13] ---
+  // --- THE MAGICIAN (Queer Bars) [cite: 12, 13] ---
   {
     id: "queer-1",
     name: "Café Lafitte's in Exile",
@@ -305,7 +305,7 @@ export const LOCATIONS: NolaLocation[] = [
     image: "https://images.unsplash.com/photo-1545128485-c400e7702796?auto=format&fit=crop&q=80&w=600"
   },
 
-  [cite_start]// --- THE HIEROPHANT (Museums & Arts) [cite: 15, 16] ---
+  // --- THE HIEROPHANT (Museums & Arts) [cite: 15, 16] ---
   {
     id: "cult-1",
     name: "New Orleans Historic Voodoo Museum",
@@ -361,7 +361,7 @@ export const LOCATIONS: NolaLocation[] = [
     image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80&w=600"
   },
 
-  [cite_start]// --- THE HERMIT / GOOD (Tourist Restaurants - Good) [cite: 17, 18, 19] ---
+  // --- THE HERMIT / GOOD (Tourist Restaurants - Good) [cite: 17, 18, 19] ---
   {
     id: "good-1",
     name: "Napoleon House",
@@ -399,7 +399,7 @@ export const LOCATIONS: NolaLocation[] = [
     image: "https://images.unsplash.com/photo-1574096079513-d82599602950?auto=format&fit=crop&q=80&w=600"
   },
 
-  [cite_start]// --- THE TOWER (Tourist Restaurants - Shitty Traps) [cite: 21, 22] ---
+  // --- THE TOWER (Tourist Restaurants - Shitty Traps) [cite: 21, 22] ---
   {
     id: "worst-1",
     name: "Oceana Grill",
@@ -491,7 +491,7 @@ export const LOCATIONS: NolaLocation[] = [
     image: "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&q=80&w=600"
   },
 
-  [cite_start]// --- THE JUDGEMENT (NHEN's List) [cite: 24, 25, 27] ---
+  // --- THE JUDGEMENT (NHEN's List) [cite: 24, 25, 27] ---
   {
     id: "nhen-1",
     name: "Fetiche",
@@ -628,7 +628,7 @@ export const LOCATIONS: NolaLocation[] = [
     image: "https://images.unsplash.com/photo-1545128485-c400e7702796?auto=format&fit=crop&q=80&w=600"
   },
 
-  [cite_start]// --- THE WHEEL (Late Night Food) [cite: 28, 29] ---
+  // --- THE WHEEL (Late Night Food) [cite: 28, 29] ---
   {
     id: "late-1",
     name: "Verti Marte",

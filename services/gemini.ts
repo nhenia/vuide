@@ -1,9 +1,11 @@
 
 import { GoogleGenAI } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY! });
+const apiKey = process.env.GEMINI_API_KEY || "";
+const ai = apiKey ? new GoogleGenAI({ apiKey }) : null;
 
 export async function getLocationProphecy(locationName: string, arcana: string): Promise<string> {
+  if (!ai) return "The spirits are silent, but the neon hums your name.";
   try {
     const response = await ai.models.generateContent({
       model: 'gemini-3-flash-preview',

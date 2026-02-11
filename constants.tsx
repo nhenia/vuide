@@ -1,4 +1,17 @@
-import { Arcana, NolaLocation } from './types';
+import { Arcana, NolaLocation, TarotCard } from './types';
+
+export const TAROT_DECK: TarotCard[] = [
+  { id: 1, name: "The Bayou Priestess", vibeColor: "#bc13fe", img: "0_0 (21) (2).jpeg" },
+  { id: 2, name: "Neon Gator", vibeColor: "#007a5e", img: "4cb9bfc1-c7c8-42f8-b5c9-9268c25ffb48.jpeg" },
+  { id: 3, name: "Parade Gold Ghost", vibeColor: "#ffd700", img: "ghost_parade.jpg" },
+  { id: 4, name: "Swamp Witch", vibeColor: "#bc13fe", img: "swamp_witch.jpg" },
+  { id: 5, name: "Electric Bourbon St", vibeColor: "#007a5e", img: "neon_street.jpg" },
+  { id: 6, name: "Midnight Gumbo", vibeColor: "#ffd700", img: "gumbo_pot.jpg" },
+  { id: 7, name: "Voodoo Glitch", vibeColor: "#bc13fe", img: "voodoo_doll.jpg" },
+  { id: 8, name: "Emerald Eel", vibeColor: "#007a5e", img: "eel.jpg" },
+  { id: 9, name: "Mardi Gras Monster", vibeColor: "#ffd700", img: "mask_monster.jpg" },
+  { id: 10, name: "The Lost Float", vibeColor: "#bc13fe", img: "parade_float.jpg" }
+];
 
 export const ARCANA_DESCRIPTIONS: Record<Arcana, string> = {
   [Arcana.FOOL]: "Dive Bars. Sticky floors, rats, cheap drinks, and chaotic energy.",

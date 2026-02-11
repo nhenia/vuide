@@ -29,3 +29,10 @@ export interface NolaLocation {
 export interface UserSettings {
   hotelAddress: string;
 }
+
+export interface TarotCard {
+  id: number;
+  name: string;
+  vibeColor: string;
+  img: string;
+}

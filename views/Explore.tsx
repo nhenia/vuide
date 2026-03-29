@@ -6,6 +6,14 @@ import { LOCATIONS } from '../constants';
 import { Arcana } from '../types';
 import { LocationCard } from '../components/LocationCard';
 
+const OPTIMIZED_LOCATIONS = LOCATIONS.map(l => ({
+  ...l,
+  nameLower: l.name.toLowerCase(),
+  descriptionLower: l.description.toLowerCase(),
+  addressLower: l.address.toLowerCase(),
+  vibeLower: l.vibe.toLowerCase()
+}));
+
 export const Explore: React.FC = () => {
   const { arcana } = useParams<{ arcana: string }>();
   const [selectedArcana, setSelectedArcana] = useState<Arcana | 'ALL'>('ALL');
@@ -25,14 +33,14 @@ export const Explore: React.FC = () => {
     }
   }, [arcana]);
 
-  const filteredLocations = LOCATIONS.filter(l => {
+  const searchLower = searchQuery.toLowerCase();
+  const filteredLocations = OPTIMIZED_LOCATIONS.filter(l => {
     const matchesArcana = selectedArcana === 'ALL' || l.arcana === selectedArcana;
-    const searchLower = searchQuery.toLowerCase();
-    const matchesSearch = searchQuery === '' ||
-      l.name.toLowerCase().includes(searchLower) ||
-      l.description.toLowerCase().includes(searchLower) ||
-      l.address.toLowerCase().includes(searchLower) ||
-      l.vibe.toLowerCase().includes(searchLower);
+    const matchesSearch = searchLower === '' ||
+      l.nameLower.includes(searchLower) ||
+      l.descriptionLower.includes(searchLower) ||
+      l.addressLower.includes(searchLower) ||
+      l.vibeLower.includes(searchLower);
     return matchesArcana && matchesSearch;
   });
 

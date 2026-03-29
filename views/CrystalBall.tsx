@@ -6,6 +6,8 @@ import { NavLink } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import { NolaLocation } from '../types';
 
+const NHEN_PICK_SET = new Set(NHEN_PICK_NAMES);
+
 export const CrystalBall: React.FC = () => {
   const [prediction, setPrediction] = useState<NolaLocation | null>(null);
   const [isGazing, setIsGazing] = useState(false);

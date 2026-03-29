@@ -1,22 +1,5 @@
 import { Arcana, NolaLocation } from './types';
 
-export const ARCANA_DESCRIPTIONS: Record<Arcana, string> = {
-  [Arcana.FOOL]: "Dive Bars. Sticky floors, rats, cheap drinks, and chaotic energy.",
-  [Arcana.MAGICIAN]: "Queer Nightlife. The Lavender Line, drag, and safe harbors.",
-  [Arcana.EMPRESS]: "Modern Dining & Arts. Galleries and Michelin contenders.",
-  [Arcana.EMPEROR]: "Grand Dames. Historic institutions defining Creole elegance.",
-  [Arcana.HIEROPHANT]: "Museums & History. Cultural repositories and dark history.",
-  [Arcana.CHARIOT]: "Itineraries. The curated path to victory.",
-  [Arcana.HERMIT]: "The Bourdain Trail & Good Eats. Culinary pilgrimages.",
-  [Arcana.WHEEL]: "Late Night Food. 24-hour grills and gumbo trunks.",
-  [Arcana.HANGED_MAN]: "Hidden Gems. Surprisingly good spots defying expectations.",
-  [Arcana.DEATH]: "Gothic Terrain. Vampire cafes, darkwaves, and fetish lounges.",
-  [Arcana.DEVIL]: "Practitioners & Shops. Voodoo, hoodoo, and occult supplies.",
-  [Arcana.TOWER]: "The 10 Worst. Tourist traps, food poisoning, and Barbie-cell bathrooms.",
-  [Arcana.MOON]: "Frenchmen Street. Authentic music, jazz, and nocturnal dreams.",
-  [Arcana.JUDGEMENT]: "NHEN's List. The final verdict on absolute essentials.",
-};
-
 export const ARCANA_SHORT_DESCRIPTIONS: Record<Arcana, string> = {
   [Arcana.FOOL]: "Dive Bars",
   [Arcana.MAGICIAN]: "Queer Nightlife",

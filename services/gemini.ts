@@ -1,10 +1,22 @@
 
 import { GoogleGenAI } from "@google/genai";
 
-const apiKey = process.env.GEMINI_API_KEY || "";
-const ai = apiKey ? new GoogleGenAI({ apiKey }) : null;
+const getApiKey = () => {
+  try {
+    const settingsStr = localStorage.getItem('neon_occult_settings');
+    if (settingsStr) {
+      const settings = JSON.parse(settingsStr);
+      return settings.geminiApiKey || "";
+    }
+  } catch {
+    return "";
+  }
+  return "";
+};
 
 export async function getLocationProphecy(locationName: string, arcana: string): Promise<string> {
+  const apiKey = getApiKey();
+  const ai = apiKey ? new GoogleGenAI({ apiKey }) : null;
   if (!ai) return "The spirits are silent, but the neon hums your name.";
   try {
     const response = await ai.models.generateContent({

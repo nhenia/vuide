@@ -27,7 +27,7 @@ export const LocationCard: React.FC<LocationCardProps> = ({ location, revealed =
     const shareData = {
       title: location.name,
       text: `🔮 Neon Occult NOLA: ${location.name} (${location.arcana})\n${location.vibe}\n${location.address}`,
-      url: window.location.href
+      url: window.location.origin + window.location.pathname
     };
 
     if (navigator.share) {

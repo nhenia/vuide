@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { ARCANA_SHORT_DESCRIPTIONS } from '../constants';
 import { TarotCardIcon } from '../components/CustomIcons';
 import { CategoryScroll } from '../components/CategoryScroll';
 

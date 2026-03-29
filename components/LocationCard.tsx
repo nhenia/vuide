@@ -27,7 +27,7 @@ export const LocationCard: React.FC<LocationCardProps> = ({ location, revealed =
     const shareData = {
       title: location.name,
       text: `🔮 Neon Occult NOLA: ${location.name} (${location.arcana})\n${location.vibe}\n${location.address}`,
-      url: window.location.href
+      url: window.location.origin + window.location.pathname
     };
 
     if (navigator.share) {
@@ -103,7 +103,7 @@ export const LocationCard: React.FC<LocationCardProps> = ({ location, revealed =
             <button 
                 onClick={(e) => {
                     e.stopPropagation();
-                    window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location.name + ' ' + location.address + ' New Orleans')}`, '_blank');
+                    window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location.name + ' ' + location.address + ' New Orleans')}`, '_blank', 'noopener,noreferrer');
                 }}
                 className="p-2 bg-black/70 backdrop-blur-md text-[var(--accent-c)] hover:text-white transition-colors border border-[var(--accent-c)]/50 hover:bg-[var(--accent-c)] rounded-none group/pin"
                 title="Open Google Maps"

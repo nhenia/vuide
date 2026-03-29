@@ -6,6 +6,8 @@ import { NavLink } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import { NolaLocation } from '../types';
 
+const NHEN_PICK_SET = new Set(NHEN_PICK_NAMES);
+
 export const CrystalBall: React.FC = () => {
   const [prediction, setPrediction] = useState<NolaLocation | null>(null);
   const [isGazing, setIsGazing] = useState(false);
@@ -19,7 +21,7 @@ export const CrystalBall: React.FC = () => {
     setTimeout(() => {
       // Filter LOCATIONS to match ONLY names in NHEN_PICK_NAMES
       const candidateLocations = LOCATIONS.filter(loc => 
-        NHEN_PICK_NAMES.includes(loc.name)
+        NHEN_PICK_SET.has(loc.name)
       );
       
       if (candidateLocations.length > 0) {

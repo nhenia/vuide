@@ -20,8 +20,9 @@ export const CrystalBall: React.FC = () => {
     // Simulate gazing time
     setTimeout(() => {
       // Filter LOCATIONS to match ONLY names in NHEN_PICK_NAMES
+      const nhenSet = new Set(NHEN_PICK_NAMES);
       const candidateLocations = LOCATIONS.filter(loc => 
-        NHEN_PICK_SET.has(loc.name)
+        nhenSet.has(loc.name)
       );
       
       if (candidateLocations.length > 0) {

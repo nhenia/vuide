@@ -8,7 +8,7 @@ export const NorthStar: React.FC = () => {
     if (settingsStr) {
       const settings = JSON.parse(settingsStr);
       if (settings.hotelAddress) {
-        window.open(`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(settings.hotelAddress)}`, '_blank');
+        window.open(`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(settings.hotelAddress)}`, '_blank', 'noopener,noreferrer');
         return;
       }
     }

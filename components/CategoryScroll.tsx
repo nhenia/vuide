@@ -4,9 +4,15 @@ import { NavLink } from 'react-router-dom';
 import { Arcana } from '../types';
 import { ARCANA_SHORT_DESCRIPTIONS, LOCATIONS } from '../constants';
 
+const ARCANA_IMAGE_MAP = LOCATIONS.reduce((acc, loc) => {
+    if (!acc[loc.arcana]) {
+        acc[loc.arcana] = loc.image;
+    }
+    return acc;
+}, {} as Record<string, string>);
+
 const getCategoryImage = (arcana: Arcana) => {
-    const location = LOCATIONS.find(l => l.arcana === arcana);
-    return location?.image || "https://images.unsplash.com/photo-1543501799-a3c306d28dd9?q=80&w=600&auto=format&fit=crop";
+    return ARCANA_IMAGE_MAP[arcana] || "https://images.unsplash.com/photo-1543501799-a3c306d28dd9?q=80&w=600&auto=format&fit=crop";
 }
 
 export const CategoryScroll: React.FC = () => {

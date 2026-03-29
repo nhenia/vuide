@@ -4,6 +4,7 @@ import { Home, Save } from 'lucide-react';
 
 export const SettingsAltar: React.FC = () => {
   const [hotelAddress, setHotelAddress] = useState('');
+  const [geminiApiKey, setGeminiApiKey] = useState('');
   const [isSaved, setIsSaved] = useState(false);
 
   useEffect(() => {
@@ -11,11 +12,12 @@ export const SettingsAltar: React.FC = () => {
     if (settingsStr) {
       const settings = JSON.parse(settingsStr);
       setHotelAddress(settings.hotelAddress || '');
+      setGeminiApiKey(settings.geminiApiKey || '');
     }
   }, []);
 
   const handleSave = () => {
-    localStorage.setItem('neon_occult_settings', JSON.stringify({ hotelAddress }));
+    localStorage.setItem('neon_occult_settings', JSON.stringify({ hotelAddress, geminiApiKey }));
     setIsSaved(true);
     setTimeout(() => setIsSaved(false), 3000);
   };
@@ -46,6 +48,20 @@ export const SettingsAltar: React.FC = () => {
             placeholder="e.g. 123 Royal St, NOLA"
             className="w-full bg-black/60 border border-white/20 p-4 text-sm focus:outline-none focus:border-[var(--accent-p)] transition-colors font-mono text-white placeholder:text-white/30"
           />
+        </div>
+
+        <div className="space-y-4">
+          <label className="text-[12px] font-mono text-[var(--accent-c)] uppercase tracking-[0.2em] block font-bold border-b border-white/10 pb-2">GEMINI NEURAL KEY</label>
+          <input
+            type="password"
+            value={geminiApiKey}
+            onChange={(e) => setGeminiApiKey(e.target.value)}
+            placeholder="Enter your Gemini API key"
+            className="w-full bg-black/60 border border-white/20 p-4 text-sm focus:outline-none focus:border-[var(--accent-p)] transition-colors font-mono text-white placeholder:text-white/30"
+          />
+          <p className="text-[10px] font-mono text-white/40 italic">
+            This key is stored locally in your browser and used to channel prophecies.
+          </p>
         </div>
 
         <button 

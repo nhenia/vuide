@@ -103,7 +103,7 @@ export const LocationCard: React.FC<LocationCardProps> = ({ location, revealed =
             <button 
                 onClick={(e) => {
                     e.stopPropagation();
-                    window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location.name + ' ' + location.address + ' New Orleans')}`, '_blank');
+                    window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location.name + ' ' + location.address + ' New Orleans')}`, '_blank', 'noopener,noreferrer');
                 }}
                 className="p-2 bg-black/70 backdrop-blur-md text-[var(--accent-c)] hover:text-white transition-colors border border-[var(--accent-c)]/50 hover:bg-[var(--accent-c)] rounded-none group/pin"
                 title="Open Google Maps"

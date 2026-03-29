@@ -6,6 +6,11 @@ import { NavLink } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import { NolaLocation } from '../types';
 
+const NHEN_NAMES_SET = new Set(NHEN_PICK_NAMES);
+const CANDIDATE_LOCATIONS = LOCATIONS.filter(loc =>
+  NHEN_NAMES_SET.has(loc.name)
+);
+
 export const CrystalBall: React.FC = () => {
   const [prediction, setPrediction] = useState<NolaLocation | null>(null);
   const [isGazing, setIsGazing] = useState(false);
@@ -17,13 +22,8 @@ export const CrystalBall: React.FC = () => {
     
     // Simulate gazing time
     setTimeout(() => {
-      // Filter LOCATIONS to match ONLY names in NHEN_PICK_NAMES
-      const candidateLocations = LOCATIONS.filter(loc => 
-        NHEN_PICK_NAMES.includes(loc.name)
-      );
-      
-      if (candidateLocations.length > 0) {
-        const randomPick = candidateLocations[Math.floor(Math.random() * candidateLocations.length)];
+      if (CANDIDATE_LOCATIONS.length > 0) {
+        const randomPick = CANDIDATE_LOCATIONS[Math.floor(Math.random() * CANDIDATE_LOCATIONS.length)];
         setPrediction(randomPick);
       }
       

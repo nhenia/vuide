@@ -1,10 +1,13 @@
 
 import { GoogleGenAI } from "@google/genai";
 
-const apiKey = process.env.GEMINI_API_KEY || "";
-const ai = apiKey ? new GoogleGenAI({ apiKey }) : null;
+const getAI = () => {
+  const apiKey = process.env.GEMINI_API_KEY || "";
+  return apiKey ? new GoogleGenAI({ apiKey }) : null;
+};
 
 export async function getLocationProphecy(locationName: string, arcana: string): Promise<string> {
+  const ai = getAI();
   if (!ai) return "The spirits are silent, but the neon hums your name.";
   try {
     const response = await ai.models.generateContent({
@@ -15,9 +18,10 @@ export async function getLocationProphecy(locationName: string, arcana: string):
         topP: 0.95,
       }
     });
-    return response.text || "The spirits are silent, but the neon hums your name.";
-  } catch (error) {
-    console.error("Gemini Error:", error);
+    return (response as any).text || "The spirits are silent, but the neon hums your name.";
+  } catch (error: any) {
+    const errorMessage = error instanceof Error ? error.message : "An error occurred during the request.";
+    console.error("Gemini Error:", errorMessage);
     return "The veil is thin; seek the truth within the shadows.";
   }
 }

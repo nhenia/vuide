@@ -12,19 +12,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Rubik+Glitch&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* Palette extracted from the "Woman with Alligators" image */
-            --bg-teal: #0d2b2a; /* Deep Teal */
-            --neon-cyan: #2dd4bf; /* Bright Teal/Cyan */
-            --blood-red: #ef4444; /* Red from wine/lips */
+            --neon-purple: #bc13fe;
+            --emerald-green: #007a5e;
+            --parade-gold: #ffd700;
             --charcoal: #020617;
             
             --bg-color: var(--charcoal);
             --text-color: #ffffff;
-            --card-bg: rgba(13, 43, 42, 0.85); /* Glassmorphism Teal */
-            --accent-p: var(--blood-red); /* Primary Accent */
-            --accent-c: var(--neon-cyan); /* Secondary Accent */
+            --card-bg: rgba(0, 0, 0, 0.8);
+            --accent-p: var(--neon-purple);
+            --accent-c: var(--emerald-green);
+            --accent-a: var(--parade-gold);
             --muted-text: #cbd5e1;
-            --input-bg: rgba(0, 0, 0, 0.6);
         }
 
         /* Force dark mode for this aesthetic */
@@ -34,21 +33,47 @@
 
         body {
             background-color: var(--bg-color);
-            /* Placeholder for the "Woman on Balcony" image. 
-               In a real deployment, this would be the uploaded image URL. */
-            background-image: linear-gradient(rgba(2, 6, 23, 0.7), rgba(13, 43, 42, 0.8)), url('https://images.unsplash.com/photo-1543501799-a3c306d28dd9?q=80&w=2000&auto=format&fit=crop'); 
-            background-size: cover;
-            background-position: center;
+            background-image: linear-gradient(rgba(2, 6, 23, 0.85), rgba(0, 0, 0, 0.9)), url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
             background-attachment: fixed;
             color: var(--text-color);
-            font-family: 'Space Mono', monospace; /* Monotype for copy */
+            font-family: 'Impact', 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
             overflow-x: hidden;
         }
 
+        /* Grainy Overlay */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/stardust.png');
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        .font-impact { font-family: 'Impact', sans-serif; }
         .font-glitch { font-family: 'Rubik Glitch', cursive; }
         .font-mono { font-family: 'Space Mono', monospace; }
-        .font-gothic { font-family: 'Crimson Text', serif; }
         
+        .text-stroke {
+            -webkit-text-stroke: 1px black;
+        }
+
+        .neon-shadow-purple {
+            text-shadow: 0 0 10px var(--neon-purple), 0 0 20px var(--neon-purple);
+        }
+
+        .neon-shadow-green {
+            text-shadow: 0 0 10px var(--emerald-green), 0 0 20px var(--emerald-green);
+        }
+
+        .neon-shadow-gold {
+            text-shadow: 0 0 10px var(--parade-gold), 0 0 20px var(--parade-gold);
+        }
+
         .glitch-text {
             position: relative;
             animation: glitch-anim 2.5s infinite;

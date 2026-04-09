@@ -405,9 +405,9 @@ export const LOCATIONS: NolaLocation[] = [
     id: "worst-3",
     name: "Willie's Chicken Shack",
     arcana: Arcana.TOWER,
-    description: "Barbie-cell bathroom.",
-    address: "Multiple Locations",
-    vibe: "Chain, Jail",
+    description: "It smells amazing when you're drunk. It will ruin your next 48 hours. Avoid.",
+    address: "409 Bourbon St",
+    vibe: "tourist trap diarrhea",
     image: "https://images.unsplash.com/photo-1513639776629-7b611d22f46c?auto=format&fit=crop&q=80&w=600"
   },
   {
